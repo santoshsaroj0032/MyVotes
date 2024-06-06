@@ -4,15 +4,17 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node  server.js"
   },
   "author": "Santosh Saroj",
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "body-parser": "^1.20.2",
     "express": "^4.19.2",
     "js": "^0.1.0",
     "mongoose": "^8.4.1",
-    "node": "^20.14.0"
+    "node": "^20.14.0",
+    "nodemon": "^3.1.3"
   }
 }
