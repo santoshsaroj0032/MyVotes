@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const { boolean } = require("webidl-conversions");
 // const bcrypt= require("bcrypt");
 
 const userSchema=new mongoose.Schema({
@@ -14,11 +15,12 @@ age:{
  },
 
 
-work:{
-    type:String,
-    enum:['chef','waiter','manager'],
-    required:true
-},
+ email:{
+     type:String,
+     required:true,
+     unique:true
+ },
+ 
 
 mobile:{
     type:String,
@@ -26,11 +28,6 @@ mobile:{
 },
 
 
-email:{
-    type:String,
-    required:true,
-    unique:true
-},
 
 
 address:{
@@ -38,9 +35,10 @@ address:{
  },
 
 
-username:{
+aadharCardNumber:{
     type:String,
-    required:true
+    required:true,
+    unique:true 
 },
 
 
@@ -48,6 +46,20 @@ password:{
     type:String,
     required:true
 },
+
+
+role:{
+    type:String,
+   enum:['voter', 'admin'],
+   default:'voter'
+},
+
+
+isVoted:{
+    type:boolean,
+   default:false
+},
+
 });
 
 
