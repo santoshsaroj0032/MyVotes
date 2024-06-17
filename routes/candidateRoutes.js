@@ -13,7 +13,7 @@ const checkAdminRole = async (userID) => {
         }
    }catch(err){
         return false;
-   }
+   }   
 }
 
 // POST route to add a candidate
