@@ -1,19 +1,21 @@
-// const bodyParser = require("body-parser");
-const express = require("express");
-const app= express();
+const express = require('express')
+const app = express();
+const db = require('./db');
+require('dotenv').config();
 
-// require("dotenv").config();
-
-
-
-const bodyParser =require("body-parser");
-app.use(bodyParser.json());
+const bodyParser = require('body-parser'); 
+app.use(bodyParser.json()); // req.body
 const PORT = process.env.PORT || 7000;
 
-app.listen(PORT, ()=>{
-console.log(`listening on port ${PORT}`);
-});
+// Import the router files
+const userRoutes = require('./routes/userRoutes');
+const candidateRoutes = require('./routes/candidateRoutes');
 
-app.get("/about",(req,res)=>{
-   return res.json( { message: "hello" });
+// Use the routers
+app.use('/user', userRoutes);
+app.use('/candidate', candidateRoutes);
+
+
+app.listen(PORT, ()=>{
+    console.log('listening on port 7000');
 })
