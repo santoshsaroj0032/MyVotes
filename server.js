@@ -14,7 +14,7 @@ const candidateRoutes = require('./routes/candidateRoutes');
 // Use the routers
 app.use('/user', userRoutes);
 app.use('/candidate', candidateRoutes);
-
+ 
  
 app.listen(PORT, ()=>{
     console.log('listening on port 7000');
